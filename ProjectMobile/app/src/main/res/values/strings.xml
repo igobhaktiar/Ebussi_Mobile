@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ProjectMobile</string>
+    <string name="search">Search</string>
+    <string name="cocok_buat_yang_lagi_diet">Cocok buat yang lagi diet</string>
+    <string name="show_more">Show more</string>
+    <string name="home">Home</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="barang">Barang</string>
+    <string name="notif">notif</string>
+    <string name="profil">profil</string>
+</resources>

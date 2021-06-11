@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        android:iconTint="@color/green"/>
+
+    <item
+        android:id="@+id/keranjang"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/keranjang"/>
+    <item
+        android:id="@+id/barang"
+        android:icon="@drawable/ic_barang"
+        android:title="@string/barang"/>
+    <item
+        android:id="@+id/notif"
+        android:icon="@drawable/ic_notif"
+        android:title="@string/notif"/>
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/profil"/>
+
+</menu>
