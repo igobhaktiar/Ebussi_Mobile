@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">imageslider</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="barang">Barang</string>
+    <string name="notif">notif</string>
+    <string name="profil">profil</string>
+</resources>
