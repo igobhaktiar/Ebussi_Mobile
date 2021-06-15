@@ -12,7 +12,7 @@
         android:title="@string/keranjang"/>
     <item
         android:id="@+id/barang"
-        android:icon="@drawable/ic_barang"
+        android:icon="@drawable/baseline_payment_green_900_24dp"
         android:title="@string/barang"/>
     <item
         android:id="@+id/notif"
