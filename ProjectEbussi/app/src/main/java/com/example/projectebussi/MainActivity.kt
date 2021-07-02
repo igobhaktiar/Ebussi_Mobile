@@ -8,17 +8,14 @@ import android.util.Log
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.projectebussi.fragments.FavouritesFragment
-import com.example.projectebussi.fragments.HomeFragment
-import com.example.projectebussi.fragments.ProfileFragment
 import androidx.activity.ComponentActivity
 import androidx.core.os.postDelayed
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.projectebussi.fragments.Keranjang
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
+import com.example.projectebussi.fragments.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val homeFragment = HomeFragment()
-        val favouritesFragment = FavouritesFragment()
+        val notifikasiFragment = NotifikasiFragment()
         val keranjang   = Keranjang()
         val  profileFragment = ProfileFragment()
 
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         badgeSetup(R.id.nav_keranjang,4)
 
-        badgeSetup(R.id.nav_favourites,20000)
+        badgeSetup(R.id.nav_notif,20000)
 
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -60,10 +57,10 @@ class MainActivity : AppCompatActivity() {
                     badgeClear(R.id.nav_keranjang)
                 }
 
-                R.id.nav_favourites -> {
-                    makeCurrentFragment(favouritesFragment)
+                R.id.nav_notif -> {
+                    makeCurrentFragment(notifikasiFragment)
                     Log.i(TAG, "Favourites Selected")
-                    badgeClear(R.id.nav_favourites)
+                    badgeClear(R.id.nav_notif)
                 }
                 R.id.nav_profile -> {
                     makeCurrentFragment(profileFragment)
