@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ProjectEbussi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favourites">Favourites</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="cocok_buat_yang_lagi_diet">Cocok buat yang lagi diet</string>
+    <string name="show_more">Show more</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="check_all">Check All</string>
+    <string name="checkout">Checkout</string>
+    <string name="total">Total</string>
+    <string name="scrollview" />
+    <string name="wortel">Wortel</string>
+    <string name="rp_20_000">Rp. 20,000</string>
+    <string name="_1">1</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+</resources>
