@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#009639</color>
     <color name="silver">#F1F1F1</color>
+    <color name="colorPrimaryLogin">#027324</color>
+    <color name="colorPrimaryDarkLogin">#014D18</color>
+    <color name="colorAccentLogin">#03C03C</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColorLogin">#fff</color>
+    <color name="primaryTextColorLogin">#027324</color>
+    <color name="loginBkColorLogin">#f0f0f0</color>
+
+    <!--colros for card-->
+    <color name="whiteCardColorLogin">#fff</color>
 </resources>

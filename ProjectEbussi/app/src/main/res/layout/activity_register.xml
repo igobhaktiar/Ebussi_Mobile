@@ -49,8 +49,8 @@
                     android:layout_height="68dp"
                     android:background="@drawable/logo"
                     android:layout_gravity="center"/>
-                    <include
-                        layout="@layout/login_layout"/>
+                <include
+                    layout="@layout/register_layout"/>
 
             </LinearLayout>
         </RelativeLayout>
