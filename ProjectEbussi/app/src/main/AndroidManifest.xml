@@ -15,13 +15,13 @@
         android:theme="@style/Theme.ProjectEbussi"
         android:usesCleartextTraffic="true">
         <activity android:name=".Register"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".login" />
 
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />
 
-        <activity android:name=".login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

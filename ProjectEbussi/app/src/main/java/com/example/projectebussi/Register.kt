@@ -2,10 +2,12 @@ package com.example.projectebussi
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projectebussi.app.ApiConfig
+import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.model.ResponModel
 import kotlinx.android.synthetic.main.register_layout.*
 import retrofit2.Call
@@ -13,9 +15,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Register : AppCompatActivity() {
+    lateinit var s:SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        s = SharedPref(this)
 
         val sudahdaftar = findViewById<TextView>(R.id.sudahdaftar)
 
@@ -52,14 +57,20 @@ class Register : AppCompatActivity() {
             return
         }
 
+        bp.visibility = View.VISIBLE
         ApiConfig.instanceRetrofit.register(edt_name.text.toString(), edt_username.text.toString(), edt_Email.text.toString(), edt_password.text.toString(), confirmPassword.text.toString()).enqueue(object : Callback<ResponModel>{
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
-
+                bp.visibility = View.GONE
                 val respon =response.body()!!
 
                 if (respon.success == 1){
-                    Toast.makeText(this@Register, "Success : "+respon.message, Toast.LENGTH_SHORT).show()
+                    s.setStatusLogin(true)
+                    val intent = Intent(this@Register, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
+                    Toast.makeText(this@Register, "Selamat datang "+respon.user.name, Toast.LENGTH_SHORT).show()
                 }
                 else{
                     Toast.makeText(this@Register, "Error : "+respon.message, Toast.LENGTH_SHORT).show()
@@ -67,6 +78,7 @@ class Register : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
+                bp.visibility = View.GONE
                 Toast.makeText(this@Register, "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
 

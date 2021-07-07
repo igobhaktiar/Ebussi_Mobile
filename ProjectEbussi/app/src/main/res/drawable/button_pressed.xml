@@ -4,7 +4,7 @@
         android:radius="20dp"
         />
     <solid
-        android:color="@color/green"/>
+        android:color="@color/colorPrimaryDarkLogin"/>
     <size
         android:width="182dp"
         android:height="54dp"

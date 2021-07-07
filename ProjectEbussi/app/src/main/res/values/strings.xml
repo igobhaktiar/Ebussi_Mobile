@@ -36,4 +36,5 @@
     <string name="klik_disini">Klik disini</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sudah_punya_akun_klik_disini">Sudah Punya akun? klik disini</string>
+    <string name="logout">Logout</string>
 </resources>

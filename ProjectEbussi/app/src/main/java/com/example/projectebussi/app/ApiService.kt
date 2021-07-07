@@ -17,12 +17,10 @@ interface ApiService {
         @Field("confirm_password") confirm_password: String
     ): retrofit2.Call<ResponModel>
 
+    @FormUrlEncoded
     @POST("login")
     fun loginapi(
-        @Field("name") name: String,
-        @Field("username") username: String,
         @Field("email") email: String,
         @Field("password") password: String,
-        @Field("confirm_password") confirm_password: String
     ): retrofit2.Call<ResponModel>
 }

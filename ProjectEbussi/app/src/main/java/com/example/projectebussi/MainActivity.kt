@@ -1,28 +1,30 @@
 package com.example.projectebussi
 
 import android.content.ContentValues.TAG
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.widget.FrameLayout
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.activity.ComponentActivity
-import androidx.core.os.postDelayed
-import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.models.SlideModel
+import com.example.projectebussi.fragments.HomeFragment
+import com.example.projectebussi.fragments.Keranjang
+import com.example.projectebussi.fragments.NotifikasiFragment
+import com.example.projectebussi.fragments.ProfileFragment
+import com.example.projectebussi.helper.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.navigation.findNavController
-import com.example.projectebussi.fragments.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private var statusLogin  = false
+    private lateinit var s:SharedPref
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        s = SharedPref(this)
 
 
         val homeFragment = HomeFragment()
@@ -63,9 +65,13 @@ class MainActivity : AppCompatActivity() {
                     badgeClear(R.id.nav_notif)
                 }
                 R.id.nav_profile -> {
-                    makeCurrentFragment(profileFragment)
-                    Log.i(TAG, "Settings Selected")
-                    badgeClear(R.id.nav_profile)
+                    if (s.getStatusLogin()) {
+                        makeCurrentFragment(profileFragment)
+                        Log.i(TAG, "Settings Selected")
+                        badgeClear(R.id.nav_profile)
+                    } else {
+                        startActivity(Intent(this, login::class.java))
+                    }
                 }
 
             }

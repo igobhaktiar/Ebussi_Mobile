@@ -80,9 +80,25 @@
             android:id="@+id/loginButton"
             style="@style/loginButton"
             android:text="@string/login"
+            android:outlineSpotShadowColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black"
+            android:clickable="true"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:focusable="true" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pb"
+            android:layout_centerInParent="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

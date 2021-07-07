@@ -17,5 +17,19 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:text="@string/profile" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logoutButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:outlineSpotShadowColor="@color/green"
+            android:text="@string/logout"
+            android:textColor="@color/green"
+            android:drawableRight="@drawable/ic_logout"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:drawableEnd="@drawable/ic_logout"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </FrameLayout>

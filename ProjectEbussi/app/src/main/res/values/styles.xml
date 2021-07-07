@@ -52,9 +52,10 @@
     </style>
 
     <style name="loginButton" parent="viewParent">
-        <item name="android:background">@drawable/login_button_bk</item>
+        <item name="android:background">@drawable/button</item>
         <item name="android:textColor">@color/whiteTextColorLogin</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:state_pressed">true</item>
     </style>
 
 
