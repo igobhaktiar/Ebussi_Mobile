@@ -57,6 +57,9 @@ class login : AppCompatActivity() {
 
                 if (respon.success == 1){
                     s.setStatusLogin(true)
+                    s.setString(s.nama, respon.user.name)
+                    s.setString(s.email, respon.user.email)
+                    s.setString(s.nohp, respon.user.nohp)
                     val intent = Intent(this@login, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)

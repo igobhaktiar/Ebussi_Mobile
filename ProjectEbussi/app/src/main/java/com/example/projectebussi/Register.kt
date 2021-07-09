@@ -47,6 +47,14 @@ class Register : AppCompatActivity() {
             edt_Email.error = "Kolom email tidak boleh kosong !"
             edt_Email.requestFocus()
             return
+        } else if (edt_noHp.text.isEmpty()){
+            edt_noHp.error = "Kolom nomor handphone tidak boleh kosong !"
+            edt_noHp.requestFocus()
+            return
+        } else if (edt_Alamat.text.isEmpty()){
+            edt_Alamat.error = "Kolom email tidak boleh kosong !"
+            edt_Alamat.requestFocus()
+            return
         } else if (edt_password.text.isEmpty()){
             edt_password.error = "Kolom password tidak boleh kosong !"
             edt_password.requestFocus()
@@ -58,7 +66,7 @@ class Register : AppCompatActivity() {
         }
 
         bp.visibility = View.VISIBLE
-        ApiConfig.instanceRetrofit.register(edt_name.text.toString(), edt_username.text.toString(), edt_Email.text.toString(), edt_password.text.toString(), confirmPassword.text.toString()).enqueue(object : Callback<ResponModel>{
+        ApiConfig.instanceRetrofit.register(edt_name.text.toString(), edt_username.text.toString(), edt_Email.text.toString(), edt_noHp.text.toString(), edt_Alamat.text.toString(), edt_password.text.toString(), confirmPassword.text.toString()).enqueue(object : Callback<ResponModel>{
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 bp.visibility = View.GONE

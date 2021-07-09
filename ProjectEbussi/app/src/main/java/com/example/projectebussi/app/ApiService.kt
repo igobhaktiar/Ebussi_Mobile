@@ -13,6 +13,8 @@ interface ApiService {
         @Field("name") name: String,
         @Field("username") username: String,
         @Field("email") email: String,
+        @Field("nohp") nohp: String,
+        @Field("alamat") alamat: String,
         @Field("password") password: String,
         @Field("confirm_password") confirm_password: String
     ): retrofit2.Call<ResponModel>

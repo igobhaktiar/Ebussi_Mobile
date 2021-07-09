@@ -37,4 +37,12 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="sudah_punya_akun_klik_disini">Sudah Punya akun? klik disini</string>
     <string name="logout">Logout</string>
+    <string name="my_profil">My Profile</string>
+    <string name="nama_user">Nama User</string>
+    <string name="nomor_telp">Nomor Telp</string>
+    <string name="ubah_profile">Ubah Profile</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="riwayat_belanja">Riwayat belanja</string>
+    <string name="no_handphone">No. Handphone</string>
+    <string name="alamat">Alamat</string>
 </resources>
