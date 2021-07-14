@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEbussi"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".DetailProdukActivity"></activity>
+        <activity android:name=".UbahProfile" />
+        <activity android:name=".Register" />
         <activity android:name=".login" />
 
         <meta-data

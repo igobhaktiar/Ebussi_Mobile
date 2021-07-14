@@ -3,9 +3,10 @@ package com.example.projectebussi.app
 import com.example.projectebussi.model.ResponModel
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface ApiService {
+interface  ApiService {
 
     @FormUrlEncoded
     @POST("register")
@@ -25,4 +26,8 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String,
     ): retrofit2.Call<ResponModel>
+
+    
+    @GET("produk")
+    fun getProduk():retrofit2.Call<ResponModel>
 }

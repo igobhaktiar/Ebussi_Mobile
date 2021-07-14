@@ -45,4 +45,20 @@
     <string name="riwayat_belanja">Riwayat belanja</string>
     <string name="no_handphone">No. Handphone</string>
     <string name="alamat">Alamat</string>
+    <string name="ubah_profil">Ubah Profil</string>
+    <string name="simpan">Simpan</string>
+    <string name="sayur_segar">Sayur Segar</string>
+    <string name="_12">12</string>
+    <string name="rp">Rp.</string>
+    <string name="rp_0">Rp.0</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="nama_produk">Nama Produk</string>
+    <string name="berat">Berat</string>
+    <string name="stok">Stok</string>
+    <string name="_0_2kg">0.2kg</string>
+    <string name="_0">0</string>
+    <string name="pembelian_dalam_jumlah_besar_hubungi">Pembelian dalam jumlah besar hubungi</string>
+    <string name="produk_terkait">Produk Terkait</string>
+    <string name="beli_sekarang">Beli Sekarang</string>
+    <string name="overview">Overview</string>
 </resources>
