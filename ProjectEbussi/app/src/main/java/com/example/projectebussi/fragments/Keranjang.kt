@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projectebussi.R
 import com.example.projectebussi.adapter.AdapterKeranjang
 import com.example.projectebussi.helper.Helper
+import com.example.projectebussi.model.Produk
 import com.example.projectebussi.room.MyDatabase
 
 class Keranjang : Fragment() {
@@ -29,13 +30,14 @@ class Keranjang : Fragment() {
         return view
     }
 
+    lateinit var adapter: AdapterKeranjang
+    var listProduk = ArrayList<Produk>()
     private fun displayProduk(){
 
-        val listProduk = myDB!!.daoKeranjang().getAll() as ArrayList
+        listProduk = myDB!!.daoKeranjang().getAll() as ArrayList
 
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
-        lateinit var adapter: AdapterKeranjang
 
         adapter = AdapterKeranjang(requireActivity(),listProduk, object : AdapterKeranjang.Listeners {
             override fun onUpdate() {
@@ -58,9 +60,15 @@ class Keranjang : Fragment() {
         val listProduk = myDB!!.daoKeranjang().getAll() as ArrayList
 
         var totalHarga = 0
+        var isSelectedAll = true
         for (produk in listProduk){
-            totalHarga += (produk.harga_produk * produk.jumlah)
+            if (produk.selected) {
+                totalHarga += (produk.harga_produk * produk.jumlah)
+            } else{
+                isSelectedAll = false
+            }
         }
+        cbAll.isChecked = isSelectedAll
         tvTotal.text = Helper().gantiRupiah(totalHarga)
     }
 
@@ -71,6 +79,14 @@ class Keranjang : Fragment() {
 
         btnBayar.setOnClickListener {
 
+        }
+        cbAll.setOnClickListener {
+            for (i in listProduk.indices){
+                val produk = listProduk[i]
+                produk.selected = cbAll.isChecked
+                listProduk[i] = produk
+            }
+            adapter.notifyDataSetChanged()
         }
     }
 
