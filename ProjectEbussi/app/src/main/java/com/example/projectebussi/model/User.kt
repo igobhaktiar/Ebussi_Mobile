@@ -7,5 +7,7 @@ class User {
     lateinit var nohp:String
     lateinit var alamat:String
 
+
+
     var id = 0
 }

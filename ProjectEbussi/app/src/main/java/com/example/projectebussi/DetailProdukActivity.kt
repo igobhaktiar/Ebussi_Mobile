@@ -112,11 +112,9 @@ class DetailProdukActivity : AppCompatActivity() {
             .error(R.drawable.wortel)
             .resize(400, 400)
             .into(image)
-        
-        setSupportActionBar(toolbar)
-        supportActionBar!!.title = produk.nama_produk
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        Helper().setToolbar(this, toolbar, produk.nama_produk)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

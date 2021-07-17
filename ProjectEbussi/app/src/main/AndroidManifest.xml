@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEbussi"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailProdukActivity"></activity>
+        <activity android:name=".CustomDialog"></activity>
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".DetailProdukActivity" />
         <activity android:name=".UbahProfile" />
         <activity android:name=".Register" />
         <activity android:name=".login" />

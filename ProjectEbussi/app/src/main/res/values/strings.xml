@@ -61,4 +61,10 @@
     <string name="produk_terkait">Produk Terkait</string>
     <string name="beli_sekarang">Beli Sekarang</string>
     <string name="overview">Overview</string>
+    <string name="bayar">Bayar</string>
+    <string name="note">Note :</string>
+    <string name="produk_akan_dikirim_dalam_waktu_24_jam_setelah_konfirmasi_kami_hanya_menerima_cash_on_delivery_saat_ini">Produk akan dikirim dalam waktu 24 jam setelah konfirmasi. Kami hanya menerima Cash on delivery saat ini.</string>
+    <string name="jumlah">Jumlah</string>
+    <string name="terima_kasih_transaksi_anda_berhasil_silahkan_meunggu_kofirmasi_dari_kami">Terima kasih! Transaksi anda berhasil silahkan meunggu kofirmasi dari kami. Lebih lengkapnya kunjungi web kami.</string>
+    <string name="belanja_lagi_yuk">Belanja lagi yuk !</string>
 </resources>
