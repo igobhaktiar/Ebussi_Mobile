@@ -7,21 +7,16 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.projectebussi.fragments.HomeFragment
 import com.example.projectebussi.fragments.Keranjang
-import com.example.projectebussi.fragments.NotifikasiFragment
 import com.example.projectebussi.fragments.ProfileFragment
 import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.room.MyDatabase
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.toolbar_custom.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +24,6 @@ class MainActivity : AppCompatActivity() {
     private val fragmentHome: Fragment = HomeFragment()
     private val fragmentKeranjang: Fragment = Keranjang()
     private val fragmentProfile: Fragment = ProfileFragment()
-    private val fragmentNotifikasi: Fragment = NotifikasiFragment()
-
 
     private var statusLogin  = false
     private lateinit var s:SharedPref
@@ -67,16 +60,15 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_keranjang -> {
-                    makeCurrentFragment(fragmentKeranjang)
-                    Log.i(TAG,"Keranjang Selected")
-                    badgeClear(R.id.nav_keranjang)
+                    if (s.getStatusLogin()) {
+                        makeCurrentFragment(fragmentKeranjang)
+                        Log.i(TAG, "Keranjang Selected")
+                        badgeClear(R.id.nav_keranjang)
+                    } else {
+                        startActivity(Intent(this, login::class.java))
+                    }
                 }
 
-                R.id.nav_notif -> {
-                    makeCurrentFragment(fragmentNotifikasi)
-                    Log.i(TAG, "Favourites Selected")
-                    badgeClear(R.id.nav_notif)
-                }
                 R.id.nav_profile -> {
                     if (s.getStatusLogin()) {
                         makeCurrentFragment(fragmentProfile)

@@ -77,4 +77,12 @@ class login : AppCompatActivity() {
         })
 
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this@login, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
+        super.onBackPressed()
+    }
 }

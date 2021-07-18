@@ -4,7 +4,6 @@
     <string name="favourites">Favourites</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
-    <string name="search">Search</string>
     <string name="cocok_buat_yang_lagi_diet">Cocok buat yang lagi diet</string>
     <string name="show_more">Show more</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -47,7 +46,7 @@
     <string name="alamat">Alamat</string>
     <string name="ubah_profil">Ubah Profil</string>
     <string name="simpan">Simpan</string>
-    <string name="sayur_segar">Sayur Segar</string>
+    <string name="sayur_segar">Sayuran Segar nih...</string>
     <string name="_12">12</string>
     <string name="rp">Rp.</string>
     <string name="rp_0">Rp.0</string>
@@ -67,4 +66,12 @@
     <string name="jumlah">Jumlah</string>
     <string name="terima_kasih_transaksi_anda_berhasil_silahkan_meunggu_kofirmasi_dari_kami">Terima kasih! Transaksi anda berhasil silahkan meunggu kofirmasi dari kami. Lebih lengkapnya kunjungi web kami.</string>
     <string name="belanja_lagi_yuk">Belanja lagi yuk !</string>
+    <string name="tambahkan_ke_keranjang">Tambahkan ke keranjang</string>
+    <string name="completed">Completed</string>
+    <string name="details">DETAILS</string>
+    <string name="_3_item">3 item</string>
+    <string name="rp_10_000">Rp.10.000</string>
+    <string name="_6_jun_2020">6 jun 2020</string>
+    <string name="cari_sayuran">Cari sayuran</string>
+    <string name="search">Search</string>
 </resources>

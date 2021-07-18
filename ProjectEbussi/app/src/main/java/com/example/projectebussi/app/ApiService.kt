@@ -31,7 +31,13 @@ interface  ApiService {
         @Body data: Checkout
     ): Call<ResponModel>
 
-    
+    @GET("checkout/user/{id}")
+    fun getRiwayat(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
     @GET("produk")
     fun getProduk():retrofit2.Call<ResponModel>
+
+
 }

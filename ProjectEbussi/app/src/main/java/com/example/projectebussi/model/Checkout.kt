@@ -4,6 +4,7 @@ class Checkout {
     lateinit var user_id: String
     lateinit var jumlah: String
     lateinit var jumlah_harga: String
+
     var produks = ArrayList<Item>()
 
     class Item{
@@ -11,4 +12,6 @@ class Checkout {
         lateinit var jumlah: String
         lateinit var jumlah_harga: String
     }
+
+    var produk = Produk()
 }

@@ -1,9 +1,10 @@
 package com.example.projectebussi.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.EditText
+import android.widget.SearchView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.projectebussi.R
+import com.example.projectebussi.R.menu
 import com.example.projectebussi.adapter.AdapterProduk
 import com.example.projectebussi.app.ApiConfig
 import com.example.projectebussi.model.Produk
@@ -18,10 +20,13 @@ import com.example.projectebussi.model.ResponModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
 
     lateinit var rvProduk: RecyclerView
+    private var listProduk:ArrayList<Produk> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +50,7 @@ class HomeFragment : Fragment() {
         return view
     }
 
+
     fun displayProduk(){
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -55,7 +61,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private var listProduk:ArrayList<Produk> = ArrayList()
+
     fun getProduk(){
         ApiConfig.instanceRetrofit.getProduk().enqueue(object : Callback<ResponModel> {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>){
@@ -71,7 +77,7 @@ class HomeFragment : Fragment() {
     }
 
     fun init(view: View){
-        rvProduk = view.findViewById(R.id.rv_produk)
+        rvProduk = view.findViewById(R.id.rv_produkHome)
     }
 }
 

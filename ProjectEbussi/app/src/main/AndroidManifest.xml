@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEbussi"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CustomDialog"></activity>
-        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".DetailTransaksiActivity" />
+        <activity android:name=".Riwayat" />
         <activity android:name=".DetailProdukActivity" />
-        <activity android:name=".UbahProfile" />
         <activity android:name=".Register" />
         <activity android:name=".login" />
 
@@ -24,7 +24,7 @@
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

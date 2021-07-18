@@ -9,6 +9,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.projectebussi.R
+import com.example.projectebussi.Riwayat
 import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.login
 
@@ -19,6 +20,7 @@ class ProfileFragment : Fragment() {
     lateinit var tvNama: TextView
     lateinit var tvEmail: TextView
     lateinit var tvPhone: TextView
+    lateinit var btnRiwayat: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +44,8 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
             return
         }
+
+
         val user = s.getUser()!!
 
         tvNama.text = user.name
@@ -56,6 +60,10 @@ class ProfileFragment : Fragment() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
         }
+
+        btnRiwayat.setOnClickListener {
+            startActivity(Intent(requireContext(), Riwayat::class.java))
+        }
     }
 
     private fun init(view: View) {
@@ -63,6 +71,9 @@ class ProfileFragment : Fragment() {
         tvNama = view.findViewById(R.id.tv_Nama)
         tvEmail = view.findViewById(R.id.tv_Email)
         tvPhone = view.findViewById(R.id.tv_Phone)
+        btnRiwayat = view.findViewById(R.id.btn_riwayat)
 
     }
+
 }
+
