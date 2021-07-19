@@ -94,40 +94,6 @@
                         android:textColor="@color/black"
                         android:layout_marginBottom="10dp"/>
                     <RelativeLayout
-                        android:id="@+id/btn_editProfile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:gravity="center_vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_baseline_edit_24"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:text="@string/ubah_profile"
-                                android:textColor="@color/black"
-                                android:layout_marginStart="10dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:src="@drawable/ic_baseline_chevron_right_24"
-                            android:layout_alignParentEnd="true" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
                         android:id="@+id/btn_riwayat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

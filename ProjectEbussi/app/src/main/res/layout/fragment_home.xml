@@ -7,53 +7,45 @@
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search"
-        android:background="@drawable/bgsearch"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:drawableLeft="@drawable/ic_search"
-        android:hint="@string/search"
-        android:drawableStart="@drawable/ic_search" />
-
-    <com.denzcoskun.imageslider.ImageSlider
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:id="@+id/imageSlider"
-        android:layout_marginTop="8dp"
-        app:iss_auto_cycle="true"
-        app:iss_delay="0"
-        app:iss_placeholder="@drawable/bgslider"
-        app:iss_error_image="@drawable/bgslider"
-        app:iss_corner_radius="5"
-        app:iss_selected_dot="@drawable/default_selected_dot"
-        app:iss_unselected_dot="@drawable/default_unselected_dot"
-        app:iss_period="1000" />
-
-    <LinearLayout
-        android:layout_marginTop="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sayur_segar"
-            android:textSize="16sp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/green"
-            android:textStyle="bold"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_produk"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
-    </LinearLayout>
+            android:orientation="vertical">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/imageSlider"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_placeholder="@drawable/bgslider"
+                app:iss_error_image="@drawable/bgslider"
+                app:iss_selected_dot="@drawable/default_selected_dot"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
+                app:iss_period="1000" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sayur_segar"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/green"
+                    android:textStyle="bold"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_produkHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                </LinearLayout>
 
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

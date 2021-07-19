@@ -12,11 +12,6 @@
         android:title="Keranjang"/>
 
     <item
-        android:id="@+id/nav_notif"
-        android:icon="@drawable/ic_notif"
-        android:title="Notifikasi" />
-
-    <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/baseline_account_circle_green_600_24dp"
         android:title="Profile" />

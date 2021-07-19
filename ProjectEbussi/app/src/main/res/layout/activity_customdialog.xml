@@ -33,11 +33,18 @@
                 android:textColor="@color/black"
                 android:text="@string/terima_kasih_transaksi_anda_berhasil_silahkan_meunggu_kofirmasi_dari_kami"
                 android:padding="10dp"/>
-            <Button
-                android:id="@+id/btnCD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/belanja_lagi_yuk"/>
+
+                <Button
+
+                    android:id="@+id/btnCD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/belanja_lagi_yuk"/>
+                <Button
+                    android:id="@+id/btn_toRiwayat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/riwayat_belanja"/>
 
         </LinearLayout>
 

@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectebussi.R
 import com.example.projectebussi.helper.Helper
@@ -65,6 +67,7 @@ class AdapterKeranjang(var activity: Activity, var data:ArrayList<Produk>, var l
             .into(holder.imgProduk)
 
         holder.btnTambah.setOnClickListener {
+            if (jumlah == produk.stok) return@setOnClickListener
             jumlah++
             produk.jumlah = jumlah
             update(produk)
