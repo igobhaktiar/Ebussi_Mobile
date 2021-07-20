@@ -3,9 +3,11 @@ package com.example.projectebussi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectebussi.adapter.AdapterHistory
 import com.example.projectebussi.app.ApiConfig
+import com.example.projectebussi.fragments.ProfileFragment
 import com.example.projectebussi.helper.Helper
 import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.model.ResponModel
@@ -62,4 +64,5 @@ class Riwayat : AppCompatActivity() {
         onBackPressed()
         return super.onSupportNavigateUp()
     }
+
 }

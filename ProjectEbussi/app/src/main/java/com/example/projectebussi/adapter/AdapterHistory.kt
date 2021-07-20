@@ -50,7 +50,7 @@ class AdapterHistory( var data: ArrayList<Transaksi>, var listener: Listeners) :
 
         val a = data[position]
 
-        holder.tvNama.text = a.user.name
+        holder.tvNama.text = a.updated_at
         holder.tvHarga.text = Helper().gantiRupiah(a.jumlah_harga)
         holder.tvJumlah.text = a.user.alamat
         val color = context.getColor(R.color.menungu)

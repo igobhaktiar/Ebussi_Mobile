@@ -1,10 +1,15 @@
 package com.example.projectebussi.fragments
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -20,6 +25,8 @@ class ProfileFragment : Fragment() {
     lateinit var tvNama: TextView
     lateinit var tvEmail: TextView
     lateinit var tvPhone: TextView
+    lateinit var tvUsername: TextView
+    lateinit var tvAlamat: TextView
     lateinit var btnRiwayat: RelativeLayout
 
     override fun onCreateView(
@@ -34,6 +41,28 @@ class ProfileFragment : Fragment() {
         setData()
 
         return view
+    }
+
+    private fun customDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(R.layout.dialog_logout)
+
+        val btnYes = dialog.findViewById<Button>(R.id.btnYes)
+        val btnNo = dialog.findViewById<Button>(R.id.btnNo)
+
+        btnYes.setOnClickListener {
+            s.setStatusLogin(status = false)
+            val intent = Intent(requireActivity(), login::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+        }
+        btnNo.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun setData() {
@@ -51,14 +80,13 @@ class ProfileFragment : Fragment() {
         tvNama.text = user.name
         tvPhone.text = user.nohp
         tvEmail.text = user.email
+        tvUsername.text = user.username
+        tvAlamat.text = user.alamat
     }
 
     private fun mainButton() {
         btnlagout.setOnClickListener {
-            s.setStatusLogin(status = false)
-            val intent = Intent(requireActivity(), login::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
+            customDialog()
         }
 
         btnRiwayat.setOnClickListener {
@@ -72,6 +100,8 @@ class ProfileFragment : Fragment() {
         tvEmail = view.findViewById(R.id.tv_Email)
         tvPhone = view.findViewById(R.id.tv_Phone)
         btnRiwayat = view.findViewById(R.id.btn_riwayat)
+        tvAlamat = view.findViewById(R.id.tv_alamatUser)
+        tvUsername = view.findViewById(R.id.tv_username)
 
     }
 

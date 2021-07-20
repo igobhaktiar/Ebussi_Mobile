@@ -1,9 +1,14 @@
 package com.example.projectebussi
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -19,6 +24,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_detail_produk.*
+import kotlinx.android.synthetic.main.dialog_stokhabis.*
 import kotlinx.android.synthetic.main.toolbar_custom.*
 
 class DetailProdukActivity : AppCompatActivity() {
@@ -38,6 +44,28 @@ class DetailProdukActivity : AppCompatActivity() {
         mainButton()
         checkKeranjang()
     }
+    private fun customDialog() {
+        if (s.getStatusLogin()) {
+            val dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.setContentView(R.layout.dialog_stokhabis)
+
+            dialog.show()
+        } else {
+            Toast.makeText(this, "Login dulu ya kakak ", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, login::class.java))
+        }
+    }
+
+    private fun dialogKeranjang() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(R.layout.dialog_tambahkeranjang)
+
+        dialog.show()
+    }
 
     private fun mainButton(){
         btn_keranjang.setOnClickListener {
@@ -45,7 +73,7 @@ class DetailProdukActivity : AppCompatActivity() {
             val stok = produk.stok
 
             if (stok <= 0){
-                Toast.makeText(this, "Stok sayuran tidak tersedia", Toast.LENGTH_LONG).show()
+               customDialog()
             } else if (data == null){
                 insert()
             }
@@ -62,31 +90,42 @@ class DetailProdukActivity : AppCompatActivity() {
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
                 onBackPressed()
             }else {
+                Toast.makeText(this, "Login dulu ya kakak ", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, login::class.java))
             }
         }
     }
 
     private fun insert(){
-        CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().insert(produk) }
-            .subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                checkKeranjang()
-                Log.d("respons", "data inserted")
-                Toast.makeText(this, "Berhasil ditambahkan ke Keranjang", Toast.LENGTH_LONG).show()
-            })
+        if (s.getStatusLogin()) {
+            CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().insert(produk) }
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    checkKeranjang()
+                    Log.d("respons", "data inserted")
+                    dialogKeranjang()
+                })
+        } else {
+            Toast.makeText(this, "Login dulu ya kakak ", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, login::class.java))
+        }
     }
 
     private fun update(data: Produk){
-        CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().update(data) }
+        if (s.getStatusLogin()) {
+            CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().update(data) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                 checkKeranjang()
                 Log.d("respons", "data updated")
-                Toast.makeText(this, "Berhasil update ke Keranjang", Toast.LENGTH_LONG).show()
+                dialogKeranjang()
             })
+        } else {
+            Toast.makeText(this, "Login dulu ya kakak ", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, login::class.java))
+        }
     }
 
     private fun checkKeranjang(){
@@ -108,7 +147,7 @@ class DetailProdukActivity : AppCompatActivity() {
         tv_nama.text = produk.nama_produk
         tv_harga.text = Helper().gantiRupiah(produk.harga_produk.toString())
         tv_deskripsi.text = produk.keterangan
-        detailBerat.text = produk.beratisi_produk.toString()
+        detailBerat.text = produk.beratisi_produk.toString() + " Kg"
         detailStok.text = produk.stok.toString()
 
         val img = Config.produkUrl + produk.foto_produk

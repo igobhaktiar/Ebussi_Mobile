@@ -47,14 +47,17 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_account_circle_black_24dp"/>
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/my_profil"
                 android:textColor="@color/white"
-                android:textSize="60sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:text="@string/my_profil"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -63,36 +66,148 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="2dp"
                 app:cardElevation="3dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingHorizontal="20dp"
                     android:paddingVertical="20dp">
-                    <TextView
-                        android:id="@+id/tv_Nama"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/nama_user"
-                        android:textColor="@color/black" />
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_Phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/nomor_telp"
-                        android:textColor="@color/black" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nama"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:textAlignment="viewEnd"
+                                android:id="@+id/tv_Nama"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nama_user"
+                                android:textColor="@color/black"
+                                android:gravity="end" />
+                        </LinearLayout>
+                    </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/tv_Email"
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/email"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nomor_telp"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:gravity="end"
+                                android:id="@+id/tv_Phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nomor_telp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/login_email_hint"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:gravity="end"
+                                android:id="@+id/tv_Email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/email"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/username"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:gravity="end"
+                                android:id="@+id/tv_username"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/username"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alamat"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:gravity="end"
+                                android:id="@+id/tv_alamatUser"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alamat"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
                     <RelativeLayout
                         android:id="@+id/btn_riwayat"
                         android:layout_width="match_parent"

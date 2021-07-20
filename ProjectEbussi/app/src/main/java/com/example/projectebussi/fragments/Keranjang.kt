@@ -156,7 +156,6 @@ class Keranjang : Fragment() {
         checkout.jumlah_harga = "" + totalHarga
         checkout.produks = produks
 
-        ll.visibility = View.VISIBLE
         ApiConfig.instanceRetrofit.checkout(checkout).enqueue(object : Callback<ResponModel> {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val respon =response.body()!!

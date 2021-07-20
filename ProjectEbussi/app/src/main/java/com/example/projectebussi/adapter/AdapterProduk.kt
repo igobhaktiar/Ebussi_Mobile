@@ -24,7 +24,7 @@ class AdapterProduk(var activity: Activity,var data:ArrayList<Produk>):RecyclerV
         val tvNama = view.findViewById<TextView>(R.id.tv_nama)
         val tvHarga = view.findViewById<TextView>(R.id.tv_harga)
         val tvStok = view.findViewById<TextView>(R.id.tv_stok)
-        val deskripsi = view.findViewById<TextView>(R.id.Deskripsi)
+        val berat = view.findViewById<TextView>(R.id.berat)
         val imgProduk = view.findViewById<ImageView>(R.id.img_produk)
         val layout = view.findViewById<CardView>(R.id.layout)
     }
@@ -36,7 +36,7 @@ class AdapterProduk(var activity: Activity,var data:ArrayList<Produk>):RecyclerV
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.tvNama.text = data[position].nama_produk
-        holder.deskripsi.text = data[position].keterangan
+        holder.berat.text = data[position].beratisi_produk.toString() + " Kg"
         holder.tvHarga.text = Helper().gantiRupiah(data[position].harga_produk.toString())
         holder.tvStok.text =  "Stok : " + data[position].stok.toString()
 

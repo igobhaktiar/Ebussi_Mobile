@@ -8,13 +8,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/img_produk"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:src="@drawable/wortel"/>
         <LinearLayout
             android:layout_marginLeft="6dp"
@@ -34,28 +35,17 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textColor="#505050"
-                android:id="@+id/Deskripsi"
+                android:id="@+id/berat"
                 android:text="@string/deskripsi"
                 />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView
                 android:textColor="#8F8F8F"
-                android:layout_marginTop="8dp"
                 android:textSize="16sp"
-                android:layout_marginHorizontal="5dp"
                 android:id="@+id/tv_stok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_12"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView
                 android:textColor="@color/green"
                 android:layout_marginBottom="10dp"
@@ -64,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rp_0"/>
-        </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

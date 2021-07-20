@@ -38,7 +38,7 @@
     <string name="logout">Logout</string>
     <string name="my_profil">My Profile</string>
     <string name="nama_user">Nama User</string>
-    <string name="nomor_telp">Nomor Telp</string>
+    <string name="nomor_telp">Handphone</string>
     <string name="ubah_profile">Ubah Profile</string>
     <string name="ubah_password">Ubah Password</string>
     <string name="riwayat_belanja">Riwayat belanja</string>
@@ -74,4 +74,10 @@
     <string name="_6_jun_2020">6 jun 2020</string>
     <string name="cari_sayuran">Cari sayuran</string>
     <string name="search">Search</string>
+    <string name="sayurnya_belum_panen_kakak">Sayurnya saat ini tidak tersedia kakak :)</string>
+    <string name="kembali">Kembali</string>
+    <string name="ditambahkan_ke_keranjang">Ditambahkan ke keranjang</string>
+    <string name="iya">Iya</string>
+    <string name="apakah_anda_yakin_logout">Kok sudah mau keluar :(</string>
+    <string name="tidak">Tidak</string>
 </resources>
