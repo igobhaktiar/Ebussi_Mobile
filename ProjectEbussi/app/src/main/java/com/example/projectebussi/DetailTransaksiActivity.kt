@@ -61,10 +61,10 @@ class DetailTransaksiActivity : AppCompatActivity() {
             tv_status.text = String().plus("Menunggu Konfirmasi")
             tv_status.setTextColor(menungggu)
         } else if (t.status == 2){
-            tv_status.text = String().plus("Pesanan Diproses")
+            tv_status.text = String().plus("Proses Pengiriman")
             tv_status.setTextColor(color)
         } else if (t.status == 3){
-            tv_status.text = String().plus("Pesanan Dikirim")
+            tv_status.text = String().plus("Terkirim")
             tv_status.setTextColor(berhasil)
         }
 

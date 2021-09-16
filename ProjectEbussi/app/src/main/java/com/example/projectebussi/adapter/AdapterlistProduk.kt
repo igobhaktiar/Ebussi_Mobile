@@ -19,7 +19,7 @@ import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import java.util.*
 
-class AdapterProduk(var activity: Activity,var data:ArrayList<Produk>, ):RecyclerView.Adapter<AdapterProduk.Holder>() {
+class AdapterlistProduk(var activity: Activity, var data:ArrayList<Produk>, ):RecyclerView.Adapter<AdapterlistProduk.Holder>() {
 
 
 
@@ -36,7 +36,7 @@ class AdapterProduk(var activity: Activity,var data:ArrayList<Produk>, ):Recycle
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_produk, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_listproduk, parent, false)
         return Holder(view)
     }
 

@@ -8,8 +8,10 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isEmpty
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.projectebussi.fragments.HomeFragment
@@ -17,7 +19,11 @@ import com.example.projectebussi.fragments.Keranjang
 import com.example.projectebussi.fragments.ProfileFragment
 import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.room.MyDatabase
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar_custom.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,24 +40,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        myDb = MyDatabase.getInstance(this)!!
 
         s = SharedPref(this)
 
-
-
         makeCurrentFragment(fragmentHome)
-//        Handler().postDelayed({
-//            badgeSetup(R.id.nav_profile,7)
-//        },2000)
 
-        badgeSetup(R.id.nav_keranjang,0)
+        LocalBroadcastManager.getInstance(this).registerReceiver(Message, IntentFilter("event:keranjang"))
 
-//        badgeSetup(R.id.nav_notif,3)
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("Respon", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
 
+            // Get new FCM registration token
+            val token = task.result
 
+            // Log and toast
+            Log.d("Respon fcm:", token.toString())
+        })
+
+    }
+
+    val Message : BroadcastReceiver = object :BroadcastReceiver(){
+        override fun onReceive(context: Context?, intent: Intent?) {
+            dariDetail = true
+        }
+
+    }
+
+    fun setBotNav(){
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
-
         bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId){
                 R.id.nav_home -> {
@@ -85,25 +105,26 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-        LocalBroadcastManager.getInstance(this).registerReceiver(Message, IntentFilter("event:keranjang"))
-
     }
 
-    val Message : BroadcastReceiver = object :BroadcastReceiver(){
-        override fun onReceive(context: Context?, intent: Intent?) {
-            dariDetail = true
-        }
+    private fun badgeKeranjang(){
+        val datakeranjang = myDb.daoKeranjang().getAll()
 
+        if(datakeranjang.isNotEmpty()){
+            badgeSetup(R.id.nav_keranjang, datakeranjang.size)
+        } else{
+            badgeClear(R.id.nav_keranjang)
+        }
     }
 
 
     private fun badgeSetup(id: Int, alerts: Int) {
         val bottom_navigation2 = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val badge = bottom_navigation2.getOrCreateBadge(id)
-            badge.isVisible = false
+            badge.isVisible = true
             badge.number = alerts
     }
+
 
 
     private fun badgeClear(id: Int) {
@@ -122,7 +143,11 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
 
+
     override fun onResume() {
+        badgeKeranjang()
+        setBotNav()
+
         if (dariDetail){
             dariDetail = false
             makeCurrentFragment(fragmentKeranjang)

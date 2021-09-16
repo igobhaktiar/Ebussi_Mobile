@@ -50,7 +50,7 @@ class AdapterHistory( var data: ArrayList<Transaksi>, var listener: Listeners) :
 
         val a = data[position]
 
-        holder.tvNama.text = a.updated_at
+        holder.tvNama.text = "AKI00" + a.id.toString()
         holder.tvHarga.text = Helper().gantiRupiah(a.jumlah_harga)
         holder.tvJumlah.text = a.user.alamat
         val color = context.getColor(R.color.menungu)
@@ -61,10 +61,10 @@ class AdapterHistory( var data: ArrayList<Transaksi>, var listener: Listeners) :
             Status.text = String().plus("Menunggu Konfirmasi")
             Status.setTextColor(menungggu)
         } else if (a.status == 2){
-            Status.text = String().plus("Pesanan Diproses")
+            Status.text = String().plus("Proses Pengiriman")
             Status.setTextColor(color)
         } else if (a.status == 3){
-            Status.text = String().plus("Pesanan Dikirim")
+            Status.text = String().plus("Terkirim")
             Status.setTextColor(berhasil)
         }
 

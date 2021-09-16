@@ -1,6 +1,6 @@
 package com.example.projectebussi.util
 
 object Config {
-    const val baseUrl = "http://192.168.43.136/"
+    const val baseUrl = "http://ebusi.workshopjti.com/"
     const val produkUrl = baseUrl + "uploads/"
 }

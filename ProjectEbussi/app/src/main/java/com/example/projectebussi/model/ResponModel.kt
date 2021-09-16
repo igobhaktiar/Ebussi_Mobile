@@ -6,6 +6,8 @@ class ResponModel {
     lateinit var message:String
     var user = User()
     var produks:ArrayList<Produk> = ArrayList()
+    var buahs:ArrayList<Buah> = ArrayList()
+    var sayurs:ArrayList<Sayur> = ArrayList()
 
     var transaksis: ArrayList<Transaksi> = ArrayList()
     var transaksi = Transaksi()

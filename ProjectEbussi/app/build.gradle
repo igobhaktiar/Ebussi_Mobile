@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -25,6 +26,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures{
+        dataBinding true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -94,4 +100,9 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
 
     implementation 'com.airbnb.android:lottie:3.4.0'
+
+//    firebase
+    implementation platform('com.google.firebase:firebase-bom:28.3.0')
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }

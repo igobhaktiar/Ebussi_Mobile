@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectEbussi</string>
+    <string name="app_name">E-Busi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="favourites">Favourites</string>
     <string name="home">Home</string>
@@ -46,7 +46,7 @@
     <string name="alamat">Alamat</string>
     <string name="ubah_profil">Ubah Profil</string>
     <string name="simpan">Simpan</string>
-    <string name="sayur_segar">Sayuran Segar nih...</string>
+    <string name="sayur_segar">Fresh Bangettt...</string>
     <string name="_12">12</string>
     <string name="rp">Rp.</string>
     <string name="rp_0">Rp.0</string>
@@ -74,10 +74,11 @@
     <string name="_6_jun_2020">6 jun 2020</string>
     <string name="cari_sayuran">Cari sayuran</string>
     <string name="search">Search</string>
-    <string name="sayurnya_belum_panen_kakak">Sayurnya saat ini tidak tersedia kakak :)</string>
+    <string name="sayurnya_belum_panen_kakak">Belum panen hehe</string>
     <string name="kembali">Kembali</string>
     <string name="ditambahkan_ke_keranjang">Ditambahkan ke keranjang</string>
     <string name="iya">Iya</string>
     <string name="apakah_anda_yakin_logout">Kok sudah mau keluar :(</string>
     <string name="tidak">Tidak</string>
+    <string name="default_notification_channel_id">Notification</string>
 </resources>

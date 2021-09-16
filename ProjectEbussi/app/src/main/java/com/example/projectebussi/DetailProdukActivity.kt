@@ -58,6 +58,8 @@ class DetailProdukActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun dialogKeranjang() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -149,6 +151,15 @@ class DetailProdukActivity : AppCompatActivity() {
         tv_deskripsi.text = produk.keterangan
         detailBerat.text = produk.beratisi_produk.toString() + " Kg"
         detailStok.text = produk.stok.toString()
+
+        val stok = produk.stok
+
+        if (stok <= 0){
+            produkKosong.visibility = View.VISIBLE
+        } else {
+            produkKosong.visibility = View.GONE
+        }
+
 
         val img = Config.produkUrl + produk.foto_produk
         Picasso.get()

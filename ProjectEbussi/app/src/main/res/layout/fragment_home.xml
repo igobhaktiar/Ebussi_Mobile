@@ -7,28 +7,179 @@
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
+    <LinearLayout
+        android:padding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_search"
+            app:iconifiedByDefault="false"
+            android:layout_margin="2dp"
+            app:queryHint="@string/cari_sayuran"
+            android:background="@drawable/bgsearch"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pb"
+            android:layout_centerInParent="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ScrollView
+        android:id="@+id/sv_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-            <com.denzcoskun.imageslider.ImageSlider
+
+            <RelativeLayout
+                android:id="@+id/layout_banner"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:id="@+id/imageSlider"
-                app:iss_auto_cycle="true"
-                app:iss_delay="0"
-                app:iss_placeholder="@drawable/bgslider"
-                app:iss_error_image="@drawable/bgslider"
-                app:iss_selected_dot="@drawable/default_selected_dot"
-                app:iss_unselected_dot="@drawable/default_unselected_dot"
-                app:iss_period="1000" />
+                android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
+                    android:background="@drawable/login_shape_bk"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/selamatdatang"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome to E-Busi"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="24sp"/>
+
+                    <ImageView
+                        style="@style/parent"
+                        android:background="@drawable/ic_login_bk" />
+                </LinearLayout>
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:layout_marginHorizontal="20dp"
+                    app:iss_corner_radius="30"
+                    android:elevation="5dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/imageSlider"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="0"
+                    app:iss_placeholder="@drawable/bgslider"
+                    app:iss_error_image="@drawable/bgslider"
+                    app:iss_selected_dot="@drawable/default_selected_dot"
+                    app:iss_unselected_dot="@drawable/default_unselected_dot"
+                    app:iss_period="1000" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_produk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="55dp"-->
+<!--                            android:background="#ECECEC" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginLeft="5dp"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_marginStart="5dp">-->
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/btn_buah"-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="50dp"-->
+<!--                                android:background="@drawable/buah"/>-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Buah - buahan"-->
+<!--                                android:textColor="@color/black"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="55dp"-->
+<!--                            android:background="#ECECEC" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginLeft="5dp"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/btn_sayur"-->
+<!--                                android:layout_width="50dp"-->
+<!--                                android:layout_height="50dp"-->
+<!--                                android:background="@drawable/harvest"/>-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Sayuran"-->
+<!--                                android:textColor="@color/black"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -39,13 +190,40 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/green"
                     android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                    <ProgressBar
+                        android:visibility="gone"
+                        android:id="@+id/load"
+                        android:layout_centerInParent="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+                </RelativeLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_produkHome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
-                </LinearLayout>
-
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_listproduk"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Pencarian tidak ditemukan"
+                android:gravity="center"/>
         </LinearLayout>
     </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

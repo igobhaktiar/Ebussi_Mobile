@@ -50,15 +50,11 @@
                             android:layout_width="340dp"
                             android:layout_height="match_parent"
                             android:layout_alignParentLeft="true"
-                            android:layout_toLeftOf="@+id/btn_share"
                             android:ellipsize="marquee"
                             android:maxLines="3"
                             android:text="@string/nama_produk"
                             android:textColor="@color/green"
                             android:textSize="20dp" />
-
-
-
 
                     </RelativeLayout>
 
@@ -77,8 +73,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal">
-
-
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -187,6 +181,19 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
                     android:background="#ECECEC" />
+
+                <TextView
+                        android:id="@+id/produkKosong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Untuk saat ini produk belum tersedia"
+                        android:textColor="@color/merah"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="18sp"
+                        android:drawablePadding="6dp"
+                        android:drawableStart="@drawable/ic_baseline_warning_24"
+                        android:drawableLeft="@drawable/ic_baseline_warning_24" />
+
 
 
             </LinearLayout>

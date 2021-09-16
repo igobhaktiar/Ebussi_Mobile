@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.projectebussi.adapter.AdapterHistory
 import com.example.projectebussi.app.ApiConfig
 import com.example.projectebussi.fragments.ProfileFragment
@@ -21,12 +22,23 @@ import retrofit2.Response
 import kotlin.collections.ArrayList
 
 class Riwayat : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_riwayat)
         Helper().setToolbar(this, toolbar, "Riwayat Belanja")
 
+
         getHistory()
+        refresh()
+    }
+
+    private fun refresh() {
+        swipeRefresh.setOnRefreshListener {
+            getHistory()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
     private fun getHistory() {
@@ -58,6 +70,9 @@ class Riwayat : AppCompatActivity() {
         })
         rv_riwayat.layoutManager = layoutManager
     }
+
+
+
 
 
     override fun onSupportNavigateUp(): Boolean {

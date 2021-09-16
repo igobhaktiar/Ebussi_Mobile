@@ -1,5 +1,6 @@
 package com.example.projectebussi.app
 
+import android.widget.SearchView
 import com.example.projectebussi.model.Checkout
 import com.example.projectebussi.model.ResponModel
 import retrofit2.Call
@@ -38,6 +39,17 @@ interface  ApiService {
 
     @GET("produk")
     fun getProduk():retrofit2.Call<ResponModel>
+
+    @GET("sayur")
+    fun getSayur():retrofit2.Call<ResponModel>
+
+    @GET("buah")
+    fun getBuah():retrofit2.Call<ResponModel>
+
+    @POST("produk/search/{query}")
+    fun getSearch(
+        @Path("query") query: String
+    ):Call<ResponModel>
 
 
 }
